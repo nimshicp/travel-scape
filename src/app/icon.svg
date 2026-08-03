@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <style>
+    .logo-stroke {
+      stroke: #266E44;
+      stroke-width: 7.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.3s ease;
+    }
+    @media (prefers-color-scheme: dark) {
+      .logo-stroke {
+        stroke: #34A853;
+      }
+    }
+  </style>
+  <path class="logo-stroke" d="M 12 18 C 30 16, 56 16, 72 30 A 34 34 0 1 1 16 42 C 15 34, 14 26, 12 18 Z" />
+  <path class="logo-stroke" d="M 22 47 L 76 47 C 82 47, 86 50, 89 56" />
+</svg>

@@ -81,13 +81,13 @@ export default function TestimonialsSection() {
 
   const imageVariants = {
     enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60, scale: 0.96 }),
-    center: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.7, ease: "easeOut" } },
+    center: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.7, ease: "easeOut" as const } },
     exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -60 : 60, scale: 0.96, transition: { duration: 0.4 } }),
   };
 
   const textVariants = {
     enter: (dir: number) => ({ opacity: 0, y: dir > 0 ? 30 : -30 }),
-    center: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.1 } },
+    center: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const, delay: 0.1 } },
     exit: (dir: number) => ({ opacity: 0, y: dir > 0 ? -30 : 30, transition: { duration: 0.3 } }),
   };
 

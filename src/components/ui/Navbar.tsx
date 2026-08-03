@@ -68,7 +68,7 @@ export default function Navbar() {
             href="https://wa.me/919605138434?text=Hi!%20I%20want%20to%20plan%20a%20trip%20with%20Travelscape."
             target="_blank"
             rel="noreferrer"
-            className="px-6 py-2 md:px-8 md:py-2.5 bg-[#0A1610]/40 backdrop-blur-md border border-[#DCB048]/85 text-[#DCB048] hover:bg-[#DCB048] hover:text-[#0A1610] text-[11px] md:text-xs font-semibold tracking-[0.24em] rounded-full transition-all duration-300 shadow-md active:scale-95 whitespace-nowrap uppercase"
+            className="hidden sm:inline-flex px-6 py-2 md:px-8 md:py-2.5 bg-[#0A1610]/40 backdrop-blur-md border border-[#DCB048]/85 text-[#DCB048] hover:bg-[#DCB048] hover:text-[#0A1610] text-[11px] md:text-xs font-semibold tracking-[0.24em] rounded-full transition-all duration-300 shadow-md active:scale-95 whitespace-nowrap uppercase"
           >
             PLAN MY TRIP
           </a>
@@ -91,19 +91,31 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden overflow-hidden w-full pt-6 pb-4 border-t border-white/10 mt-4 flex flex-col gap-4"
+            transition={{ duration: 0.3, ease: "easeInOut" as const }}
+            className="md:hidden overflow-hidden w-full pt-5 pb-4 border-t border-white/10 mt-4 flex flex-col gap-3"
           >
             {navLinks.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollTo(item.href)}
-                className="w-full text-left py-2 px-3 text-sm font-semibold tracking-[0.2em] text-white/90 hover:text-[#34A853] hover:bg-white/5 rounded-lg transition-colors uppercase flex items-center justify-between"
+                className="w-full text-left py-2 px-3 text-xs sm:text-sm font-semibold tracking-[0.24em] text-white/90 hover:text-[#DCB048] hover:bg-white/5 rounded-lg transition-colors uppercase flex items-center justify-between"
               >
                 <span>{item.name}</span>
                 <span className="text-xs text-white/40">→</span>
               </button>
             ))}
+
+            {/* PLAN MY TRIP button visible inside mobile menu on small screens */}
+            <div className="pt-2 sm:hidden">
+              <a
+                href="https://wa.me/919605138434?text=Hi!%20I%20want%20to%20plan%20a%20trip%20with%20Travelscape."
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-3 bg-[#0A1610]/70 backdrop-blur-md border border-[#DCB048]/85 text-[#DCB048] hover:bg-[#DCB048] hover:text-[#0A1610] text-xs font-semibold tracking-[0.24em] rounded-full transition-all duration-300 shadow-md flex items-center justify-center uppercase active:scale-95"
+              >
+                PLAN MY TRIP
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
